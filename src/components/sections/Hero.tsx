@@ -99,7 +99,7 @@ export default function HRPlatformHero() {
       </div>
 
       {/* Main Content */}
-      <div className="text-center max-w-2xl mx-auto mt-55 sm:mt-65 relative z-50">
+      <div className="text-center max-w-2xl mx-auto mt-55 sm:mt-65 lg:mt-50 relative z-50">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight mx-0">
           Ускорьте свой
           <br />
