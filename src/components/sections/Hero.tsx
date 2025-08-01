@@ -23,11 +23,11 @@ export default function HRPlatformHero() {
             <AlignEndHorizontal className="w-5 h-5 text-white" />
           </div>
           {/* Center Left */}
-          <div className="absolute z-10 top-10 left-10 md:left-32 w-12 h-12 md:w-16 md:h-16 bg-amber-400 rounded-xl flex items-center justify-center shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300">
+          <div className="absolute z-10 top-10 left-10 md:left-34 w-12 h-12 md:w-16 md:h-16 bg-amber-400 rounded-xl flex items-center justify-center shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300">
             <Bot className="w-6 h-6 text-white" />
           </div>
           {/* Bottom Left Side */}
-          <div className="absolute z-10 top-28 left-6 md:left-24 w-10 h-10 md:w-14 md:h-14 bg-cyan-400 rounded-xl flex items-center justify-center shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300">
+          <div className="absolute z-10 top-28 left-6 md:left-14 w-10 h-10 md:w-14 md:h-14 bg-cyan-400 rounded-xl flex items-center justify-center shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300">
             <Package className="w-5 h-5 md:w-6 md:h-6 text-white" />
           </div>
           {/* Center */}
@@ -50,21 +50,21 @@ export default function HRPlatformHero() {
           {/* SVG Lines for Connections */}
           <>
             <svg className="absolute inset-0 w-full h-full pointer-events-none stroke-gray-300">
-              {/* Purple */}
+              {/* Analytics */}
               <line x1="100" y1="1" x2="270" y2="1" strokeWidth="1" />
               <line x1="270" y1="1" x2="340" y2="70" strokeWidth="1" />
-              {/* Lightbulb */}
-              <line x1="128" y1="70" x2="450" y2="70" strokeWidth="1" />
-              {/* Energy Bolt */}
-              <line x1="128" y1="140" x2="200" y2="140" strokeWidth="1" />
+              {/* Bot */}
+              <line x1="140" y1="70" x2="450" y2="70" strokeWidth="1" />
+              {/* Box */}
+              <line x1="100" y1="140" x2="200" y2="140" strokeWidth="1" />
               <line x1="200" y1="140" x2="270" y2="70" strokeWidth="1" />
 
-              {/* Shield */}
+              {/* Cart */}
               <line x1="700" y1="30" x2="770" y2="30" strokeWidth="1" />
               <line x1="650" y1="70" x2="700" y2="30" strokeWidth="1" />
               {/* Users */}
               <line x1="450" y1="70" x2="850" y2="70" strokeWidth="1" />
-              {/* Orange */}
+              {/* Phone */}
               <line x1="650" y1="135" x2="800" y2="135" strokeWidth="1" />
               <line x1="580" y1="70" x2="650" y2="135" strokeWidth="1" />
             </svg>
