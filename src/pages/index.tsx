@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import Hero from '@/components/sections/Hero';
 import localFont from 'next/font/local';
 import Head from 'next/head';
 
@@ -7,100 +8,100 @@ const firsNeue = localFont({
     {
       path: '../assets/fonts/TTFirsNeue-Thin.woff2',
       weight: '100',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-ThinItalic.woff2',
       weight: '100',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-ExtraLight.woff2',
       weight: '200',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-ExtraLightItalic.woff2',
       weight: '200',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Light.woff2',
       weight: '300',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-LightItalic.woff2',
       weight: '300',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Regular.woff2',
       weight: '400',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Italic.woff2',
       weight: '400',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Medium.woff2',
       weight: '500',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-MediumItalic.woff2',
       weight: '500',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-DemiBold.woff2',
       weight: '600',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-DemiBoldItalic.woff2',
       weight: '600',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Bold.woff2',
       weight: '700',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-BoldItalic.woff2',
       weight: '700',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-ExtraBold.woff2',
       weight: '800',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-ExtraBoldItalic.woff2',
       weight: '800',
-      style: 'italic'
+      style: 'italic',
     },
     {
       path: '../assets/fonts/TTFirsNeue-Black.woff2',
       weight: '900',
-      style: 'normal'
+      style: 'normal',
     },
     {
       path: '../assets/fonts/TTFirsNeue-BlackItalic.woff2',
       weight: '900',
-      style: 'italic'
-    }
+      style: 'italic',
+    },
   ],
   display: 'swap',
   variable: '--font-firs-neue',
   fallback: ['system-ui', 'arial', 'sans-serif'],
   preload: true,
-  adjustFontFallback: false
-})
+  adjustFontFallback: false,
+});
 
 export default function Home() {
   return (
@@ -108,9 +109,12 @@ export default function Home() {
       <Head>
         <title>SalemAI</title>
       </Head>
-      <div className={`font-sans flex justify-center min-h-screen ${firsNeue.className}`}>
-        <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start max-w-[1000px] w-full">
-          <Header />
+      <div
+        className={`font-sans flex justify-center min-h-screen ${firsNeue.className} relative`}
+      >
+        <Header />
+        <main className="w-full">
+          <Hero />
         </main>
       </div>
     </>

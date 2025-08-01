@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm py-4 px-6 border border-gray-300 rounded-3xl sticky top-6 left-1/2 -translate-x-1/2 z-50">
+    <header className="bg-white shadow-sm py-4 px-6 border border-gray-300 rounded-3xl fixed top-6 left-1/2 -translate-x-1/2 z-100 max-h-max mx-auto">
       <div className="max-w-7xl flex items-center justify-between">
         {/* Logo/Brand */}
         <div className="flex items-center mr-16">
@@ -13,20 +13,20 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8">
           <a
             href="#"
-            className="text-gray-600 hover:text-gray-900 font-semibold"
+            className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Услуги
           </a>
 
           <a
             href="#"
-            className="text-gray-600 hover:text-gray-900 font-semibold"
+            className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Цены
           </a>
           <a
             href="#"
-            className="text-gray-600 hover:text-gray-900 font-semibold"
+            className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Связаться
           </a>
