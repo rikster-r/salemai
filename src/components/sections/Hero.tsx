@@ -13,7 +13,7 @@ import HeroSmall from '../../assets/images/HeroSmall.png';
 
 export default function HRPlatformHero() {
   return (
-    <section className="min-h-screen bg-gray-50 relative overflow-hidden pt-35 md:pt-40">
+    <section className="max-h-[800px] bg-gray-50 relative overflow-hidden pt-35 pb-16 md:pt-40">
       {/* Centered Container for Floating Elements */}
       <div className="absolute inset-x-0 items-center justify-center z-50 hidden lg:flex ">
         <div className="relative w-full max-w-4xl h-96">
@@ -105,8 +105,8 @@ export default function HRPlatformHero() {
           <br />
           бизнес
         </h1>
-        <p className="text-gray-600 text-base md:text-lg mb-8 max-w-md mx-auto leading-relaxed">
-          SalemAI — платформа для автоматизации и роста бизнеса с помощью ИИ.
+        <p className="text-gray-600 text-base md:text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+          Автоматизируйте процессы в продажах, маркетинге, HR и других сферах с помощью SalemAI.
         </p>
         <button className="bg-primary-400 hover:bg-primary-500 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all">
           Оставить заявку

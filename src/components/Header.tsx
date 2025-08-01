@@ -5,7 +5,7 @@ import LogoFull from '../assets/images/LogoFull.png';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm py-3 px-5 sm:py-4 sm:px-6 w-[95%] sm:w-full sm:max-w-xl border border-gray-300 rounded-3xl fixed top-6 left-1/2 -translate-x-1/2 z-50 sm:mx-auto">
+    <header className="bg-white shadow-sm py-3 px-5 sm:py-4 sm:px-6 w-[95%] sm:w-full sm:max-w-xl border border-gray-300 rounded-3xl fixed top-6 left-1/2 -translate-x-1/2 z-100 sm:mx-auto">
       <div className="sm:max-w-7xl flex items-center justify-between">
         {/* Logo/Brand */}
         <div className="flex items-center mr-16 w-[100px] h-[40px] relative">
