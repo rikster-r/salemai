@@ -100,7 +100,6 @@ const firsNeue = localFont({
   display: 'swap',
   variable: '--font-firs-neue',
   fallback: ['system-ui', 'arial', 'sans-serif'],
-  preload: true,
   adjustFontFallback: false,
 });
 
