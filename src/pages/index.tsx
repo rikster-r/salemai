@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
+import Pricing from '@/components/sections/Pricing';
 import Services from '@/components/sections/Services';
 import localFont from 'next/font/local';
 import Head from 'next/head';
@@ -116,6 +117,7 @@ export default function Home() {
         <main className="w-full">
           <Hero />
           <Services />
+          <Pricing />
         </main>
       </div>
     </>
