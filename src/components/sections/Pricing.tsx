@@ -132,7 +132,7 @@ const PricingSection = () => {
         </div>
 
         {/* Pricing Container - Horizontal scroll on mobile, grid on larger screens */}
-        <div className="lg:grid lg:grid-cols-4 lg:gap-6 pt-16 overflow-x-auto no-scrollbar">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-6 pt-16 pb-8 overflow-x-auto no-scrollbar">
           {/* Mobile: Horizontal scrollable container */}
           <div className="lg:hidden pb-4">
             <div className="flex space-x-4 min-w-max px-1">
@@ -160,7 +160,7 @@ const PricingSection = () => {
                     )}
 
                     <div
-                      className={`rounded-xl relative h-full bg-white border border-slate-200 transition-all duration-300 group-hover:shadow-xl ${
+                      className={`rounded-xl relative h-full bg-white border border-slate-200 transition-all duration-300 ${
                         colorClasses.hover
                       } ${colorClasses.accent} -4 ${
                         plan.popular
@@ -251,7 +251,7 @@ const PricingSection = () => {
                   )}
 
                   <div
-                    className={`rounded-xl relative h-full bg-white border border-slate-200 transition-all duration-300 group-hover:shadow-xl ${
+                    className={`rounded-xl relative h-full bg-white border border-slate-200 transition-all duration-300 ${
                       colorClasses.hover
                     } ${colorClasses.accent} -4 ${
                       plan.popular
@@ -314,7 +314,7 @@ const PricingSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-8 md:mt-20">
+        <div className="md:mt-8">
           <div className="max-w-4xl mx-auto">
             <div className="rounded-xl text-white relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950"></div>
