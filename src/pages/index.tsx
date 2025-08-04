@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
 import Pricing from '@/components/sections/Pricing';
-import Services from '@/components/sections/Services';
+import Spheres from '@/components/sections/Spheres';
 import Footer from '@/components/sections/Footer';
 import localFont from 'next/font/local';
 import Head from 'next/head';
@@ -117,7 +117,7 @@ export default function Home() {
         <Header />
         <main className="w-full">
           <Hero />
-          <Services />
+          <Spheres />
           <Pricing />
           <Footer />
         </main>

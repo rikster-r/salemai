@@ -11,7 +11,7 @@ const spheresList = [
   'Аналитика и отчеты',
 ];
 
-const BusinessAutomationDashboard = () => {
+const Spheres = () => {
   const [selectedSphere, setSelectedSphere] = useState<string | null>(null);
 
   return (
@@ -37,4 +37,4 @@ const BusinessAutomationDashboard = () => {
   );
 };
 
-export default BusinessAutomationDashboard;
+export default Spheres;
