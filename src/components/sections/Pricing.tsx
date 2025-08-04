@@ -103,12 +103,9 @@ const PricingSection = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-50 to-white py-20">
+    <section className="relative bg-gradient-to-b from-slate-50 to-slate-100 py-20">
       {/* Sophisticated Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
-
-      {/* Subtle Radial Gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-slate-100/40 via-transparent to-transparent"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -335,7 +332,7 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

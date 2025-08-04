@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
 import Pricing from '@/components/sections/Pricing';
 import Spheres from '@/components/sections/Spheres';
+import Services from '@/components/sections/Services';
 import Footer from '@/components/sections/Footer';
 import localFont from 'next/font/local';
 import Head from 'next/head';
@@ -118,6 +119,7 @@ export default function Home() {
         <main className="w-full">
           <Hero />
           <Spheres />
+          <Services />
           <Pricing />
           <Footer />
         </main>
