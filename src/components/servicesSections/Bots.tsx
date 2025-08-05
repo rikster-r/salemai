@@ -1,6 +1,21 @@
 import Image from 'next/image';
 import PhoneMockup from '../../assets/images/phoneMockup.png';
 import { SendHorizontal } from 'lucide-react';
+import { motion } from 'motion/react';
+
+const messagesContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 1.5,
+    },
+  },
+};
+
+const messageVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
 
 export default function Bots() {
   return (
@@ -46,38 +61,55 @@ export default function Bots() {
       <div className="flex-1 flex justify-center">
         {/* CONTAINER that holds both image and overlay */}
         <div className="relative w-full max-w-[400px]">
-          
           {/* 1. The frame image – responsive to container width */}
           <Image
             src={PhoneMockup}
-            alt="Phone"
+            alt=""
             className="block w-full h-auto select-none"
             width={400} // intrinsic width
             height={800} // intrinsic height matching your png
           />
 
           {/* 2. Chat overlay: fits exactly over display area */}
-          <div className="absolute inset-0 p-[calc(0.12*98%)] flex flex-col justify-between pointer-events-none mt-6">            
+          <div className="absolute inset-0 p-[calc(0.12*98%)] flex flex-col pointer-events-none mt-6">
             {/* Chat Messages Container: scrollable */}
-            <div className="flex-1 overflow-y-auto space-y-3">
-              <div className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]">
+            <motion.div
+              className="overflow-y-auto space-y-3"
+              variants={messagesContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]"
+                variants={messageVariants}
+              >
                 <p className="text-base">Здравствуйте! Чем могу помочь?</p>
-              </div>
-              <div className="flex justify-end">
+              </motion.div>
+              <motion.div
+                className="flex justify-end"
+                variants={messageVariants}
+              >
                 <div className="bg-blue-500 p-3 rounded-2xl rounded-tr-sm max-w-[80%]">
-                  <p className="text-base text-white">Хочу узнать о ваших услуги</p>
+                  <p className="text-base text-white">
+                    Хочу узнать о ваших услугах
+                  </p>
                 </div>
-              </div>
-              <div className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]">
+              </motion.div>
+              <motion.div
+                className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]"
+                variants={messageVariants}
+              >
                 <p className="text-base">
-                  Конечно! Мы предлагаем широкий спектр услуг для автоматизации всех бизнес-процессов
+                  Конечно! Мы предлагаем широкий спектр услуг для автоматизации
+                  всех бизнес-процессов
                 </p>
-              </div>
+              </motion.div>
               {/* More messages as needed... */}
-            </div>
+            </motion.div>
 
             {/* Input Field */}
-            <div className="pt-2">
+            <div className="pt-6">
               <div className="w-full bg-white rounded-full p-2 flex items-center border border-gray-300 pointer-events-auto">
                 <input
                   type="text"
