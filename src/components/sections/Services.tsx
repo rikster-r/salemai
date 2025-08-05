@@ -8,7 +8,7 @@ export default function Services() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight" id="services">
             Что мы предлагаем?
           </h2>
         </div>

@@ -117,7 +117,7 @@ const PricingSection = () => {
             </span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-slate-300"></div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight" id="pricing">
             Выберите подходящий
             <span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mt-2">
               уровень

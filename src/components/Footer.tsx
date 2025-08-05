@@ -20,13 +20,13 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex space-x-3">
               <a
-                href="#"
+                href="https://t.me/salemaikz_bot"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               >
                 <SiTelegram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/salemai.kz/"
                 className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               >
                 <SiInstagram size={20} />

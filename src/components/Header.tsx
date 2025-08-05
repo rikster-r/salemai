@@ -15,14 +15,14 @@ const Header = () => {
         {/* Navigation Links */}
         <nav className="hidden sm:flex space-x-8">
           <a
-            href="#"
+            href="#services"
             className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Услуги
           </a>
 
           <a
-            href="#"
+            href="#pricing"
             className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Цены
