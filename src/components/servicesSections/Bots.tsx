@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import PhoneMockup from '../../assets/images/phoneMockup.png';
+import PhoneMockupCropped from '../../assets/images/phoneMockupCropped.png';
 import { SendHorizontal } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -19,7 +19,7 @@ const messageVariants = {
 
 export default function Bots() {
   return (
-    <div className="flex flex-col md:flex-row items-start md:justify-between gap-8 md:gap-16 max-w-6xl mx-auto md:min-h-[850px]">
+    <div className="flex flex-col md:flex-row items-start md:justify-between gap-8 md:gap-16 max-w-6xl mx-auto">
       {/* Left Side - Bot Information */}
       <div className="flex-1 space-y-6 md:space-y-8 md:mt-10">
         <h3 className="text-2xl md:text-4xl font-bold text-slate-800">
@@ -63,7 +63,7 @@ export default function Bots() {
         <div className="relative w-full max-w-[400px]">
           {/* 1. The frame image – responsive to container width */}
           <Image
-            src={PhoneMockup}
+            src={PhoneMockupCropped}
             alt=""
             className="block w-full h-auto select-none"
             width={400} // intrinsic width
@@ -71,10 +71,10 @@ export default function Bots() {
           />
 
           {/* 2. Chat overlay: fits exactly over display area */}
-          <div className="absolute inset-0 p-[calc(0.12*98%)] flex flex-col pointer-events-none mt-6">
+          <div className="absolute inset-0 px-[calc(0.12*98%)] pb-[calc(0.12*98%)] pt-4 flex flex-col pointer-events-none">
             {/* Chat Messages Container: scrollable */}
             <motion.div
-              className="overflow-y-auto space-y-3"
+              className="overflow-y-auto space-y-3 flex-1"
               variants={messagesContainerVariants}
               initial="hidden"
               whileInView="visible"
