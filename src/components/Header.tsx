@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
-import LogoFull from '../assets/images/LogoFull.png';
+import LogoFull from '../assets/images/LogoFull.svg';
 
 const Header = () => {
   return (
@@ -9,13 +9,7 @@ const Header = () => {
       <div className="sm:max-w-7xl flex items-center justify-between">
         {/* Logo/Brand */}
         <div className="flex items-center mr-16 w-[100px] h-[40px] relative">
-          <Image
-            src={LogoFull}
-            alt=""
-            fill={true}
-            priority
-            className="filter invert hue-rotate-180"
-          />
+          <Image src={LogoFull} alt="" fill={true} priority />
         </div>
 
         {/* Navigation Links */}

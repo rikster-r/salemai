@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { SiTelegram, SiInstagram } from '@icons-pack/react-simple-icons';
-import LogoFull from '../../assets/images/LogoFull.png';
+import LogoFull from '../assets/images/LogoFull.svg';
 
 export default function Footer() {
   return (
@@ -11,13 +11,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="md:col-start-1 mb-4">
             <div className="flex items-center mr-16 w-[100px] h-[40px] relative mb-4">
-              <Image
-                src={LogoFull}
-                alt=""
-                fill={true}
-                priority
-                className="filter invert hue-rotate-180"
-              />
+              <Image src={LogoFull} alt="" fill={true} priority />
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Инновационные решения для автоматизации бизнеса с использованием
