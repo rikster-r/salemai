@@ -1,5 +1,6 @@
 import Bots from '../servicesSections/Bots';
 import CRM from '../servicesSections/CRM';
+import Telephone from '../servicesSections/Telephone';
 
 export default function Services() {
   return (
@@ -15,6 +16,7 @@ export default function Services() {
         {/* Main Content */}
         <Bots />
         <CRM />
+        <Telephone />
       </div>
     </section>
   );
