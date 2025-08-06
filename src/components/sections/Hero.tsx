@@ -12,7 +12,7 @@ import Image from 'next/image';
 import HeroSmall from '../../assets/images/HeroSmall.png';
 
 type Props = {
-  openContactModal: () => void;
+  openContactModal: (plan?: string) => void;
 };
 
 export default function Hero({ openContactModal }: Props) {
@@ -115,7 +115,7 @@ export default function Hero({ openContactModal }: Props) {
         </p>
         <button
           className="bg-primary-400 hover:bg-primary-500 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all"
-          onClick={openContactModal}
+          onClick={() => openContactModal()}
         >
           Оставить заявку
         </button>

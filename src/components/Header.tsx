@@ -4,7 +4,7 @@ import Image from 'next/image';
 import LogoFull from '../assets/images/LogoFull.svg';
 
 type Props = {
-  openContactModal: () => void;
+  openContactModal: (plan?: string) => void;
 };
 
 const Header = ({ openContactModal }: Props) => {
@@ -32,7 +32,7 @@ const Header = ({ openContactModal }: Props) => {
             Цены
           </a>
           <button
-            onClick={openContactModal}
+            onClick={() => openContactModal()}
             className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Связаться

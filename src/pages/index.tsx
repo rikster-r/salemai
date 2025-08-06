@@ -110,8 +110,12 @@ const firsNeue = localFont({
 
 export default function Home() {
   const [isContactModalOpen, setContactModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
-  const openContactModal = () => {
+  const openContactModal = (plan?: string) => {
+    if (plan) {
+      setSelectedPlan(plan);
+    }
     setContactModalOpen(true);
   };
 
@@ -132,6 +136,8 @@ export default function Home() {
         <ContactModal
           isOpen={isContactModalOpen}
           onClose={() => setContactModalOpen(false)}
+          selectedPlan={selectedPlan}
+          setSelectedPlan={setSelectedPlan}
         />
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -14,29 +14,60 @@ import { toast } from 'react-toastify';
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  selectedPlan: string | null;
+  setSelectedPlan: (plan: string | null) => void;
 };
 
-const ContactModal = ({ isOpen, onClose }: Props) => {
+const ContactModal = ({
+  isOpen,
+  onClose,
+  selectedPlan,
+  setSelectedPlan,
+}: Props) => {
+  const planOptions = [
+    { value: '', label: 'Выберите тариф (необязательно)' },
+    { value: 'Старт', label: 'Старт' },
+    { value: 'Бизнес', label: 'Бизнес' },
+    { value: 'Профессионал', label: 'Профессионал' },
+    { value: 'Премиум', label: 'Премиум' },
+  ];
+
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
+    plan: '',
     message: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<string | null>(null); // 'success' | 'error'
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
+
+  // Sync the plan from props to local state when the modal opens or selectedPlan changes
+  useEffect(() => {
+    if (isOpen) {
+      setFormData((prev) => ({
+        ...prev,
+        plan: selectedPlan || '',
+      }));
+    }
+  }, [isOpen, selectedPlan]);
 
   const handleChange: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
   > = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // If the plan is changed via the form, update the parent component's state
+    if (name === 'plan') {
+      setSelectedPlan(value || null); // Convert empty string back to null for the parent
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('Form submitted:', formData);
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -46,11 +77,13 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
 
     if (!serviceID || !templateID || !publicKey) {
       console.error('EmailJS environment variables are not set');
+      toast.error('Ошибка конфигурации. Пожалуйста, попробуйте позже.');
       setIsSubmitting(false);
       setSubmitStatus('error');
       return;
     }
 
+    // Check for required fields
     if (!formData.name || !formData.phone || !formData.message) {
       toast.error('Пожалуйста, заполните все обязательные поля');
       setIsSubmitting(false);
@@ -59,16 +92,26 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
     }
 
     try {
+      // Prepare the template parameters for EmailJS
+      const templateParams = {
+        ...formData,
+        email: '', // Add empty email field for EmailJS template compatibility
+      };
+
       const response = await emailjs.send(
         serviceID,
         templateID,
-        formData,
+        templateParams,
         publicKey
       );
+
       console.log('Email sent successfully:', response);
       setSubmitStatus('success');
     } catch (error) {
       console.error('Error sending email:', error);
+      toast.error(
+        'Не удалось отправить сообщение. Пожалуйста, попробуйте снова.'
+      );
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -76,9 +119,21 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
   };
 
   const resetForm = () => {
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', phone: '', plan: '', message: '' });
     setSubmitStatus(null);
+    setSelectedPlan(null);
   };
+
+  // Reset form when modal closes
+  useEffect(() => {
+    if (!isOpen) {
+      // Delay reset slightly to allow closing animation to finish
+      const timer = setTimeout(() => {
+        resetForm();
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, resetForm]);
 
   return (
     <Transition show={isOpen} as={React.Fragment}>
@@ -94,7 +149,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
         >
           <DialogBackdrop className="fixed inset-0 bg-black/20 backdrop-blur-sm" />
         </TransitionChild>
-
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
             <TransitionChild
@@ -115,7 +169,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                 >
                   <X className="w-5 h-5" />
                 </button>
-
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr]">
                   {/* Contact Information Side */}
                   <div className="hidden md:block bg-gradient-to-br from-slate-50 to-slate-100 p-8 lg:p-12">
@@ -128,7 +181,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                           Мы готовы помочь вам с любыми вопросами
                         </p>
                       </div>
-
                       <div className="space-y-6">
                         <div className="flex items-start space-x-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-blue-600">
@@ -141,7 +193,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                             <p className="text-slate-600">+7 (777) 123-45-67</p>
                           </div>
                         </div>
-
                         <div className="flex items-start space-x-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-emerald-600">
                             <Mail className="w-5 h-5" />
@@ -155,7 +206,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                             </p>
                           </div>
                         </div>
-
                         <div className="flex items-start space-x-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center text-purple-600">
                             <MapPin className="w-5 h-5" />
@@ -170,7 +220,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                           </div>
                         </div>
                       </div>
-
                       <div className="pt-6">
                         <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                           <p className="text-sm text-slate-600">
@@ -180,7 +229,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                       </div>
                     </div>
                   </div>
-
                   {/* Form Side */}
                   <div className="p-8 lg:p-12">
                     {submitStatus === 'success' ? (
@@ -211,7 +259,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                             Заполните форму, и мы свяжемся с вами
                           </p>
                         </div>
-
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                           <div>
                             <label
@@ -230,7 +277,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                               className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                             />
                           </div>
-
                           <div>
                             <label
                               htmlFor="phone"
@@ -249,24 +295,28 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                             />
                           </div>
                         </div>
-
+                        {/* Plan Selection Dropdown - now reflects and updates the prop */}
                         <div>
                           <label
-                            htmlFor="email"
+                            htmlFor="plan"
                             className="block text-sm font-medium text-slate-700 mb-2"
                           >
-                            Email
+                            Выбранный тариф
                           </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
+                          <select
+                            id="plan"
+                            name="plan"
+                            value={formData.plan} // Controlled by local state which syncs with prop
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                          />
+                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-white"
+                          >
+                            {planOptions.map((option) => (
+                              <option key={option.value} value={option.value}>
+                                {option.label}
+                              </option>
+                            ))}
+                          </select>
                         </div>
-
                         <div>
                           <label
                             htmlFor="message"
@@ -285,7 +335,6 @@ const ContactModal = ({ isOpen, onClose }: Props) => {
                             placeholder="Расскажите о вашем проекте..."
                           ></textarea>
                         </div>
-
                         <div>
                           <button
                             type="submit"

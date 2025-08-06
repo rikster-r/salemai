@@ -4,7 +4,7 @@ import { Check, ArrowRight, Zap, Building, Crown, Rocket } from 'lucide-react';
 type Colors = 'emerald' | 'blue' | 'purple' | 'orange';
 
 type Props = {
-  openContactModal: () => void;
+  openContactModal: (plan?: string) => void;
 };
 
 const PricingSection = ({ openContactModal }: Props) => {
@@ -80,7 +80,7 @@ const PricingSection = ({ openContactModal }: Props) => {
     []
   );
 
-  const getColorClasses = (color: Colors, popular = false) => {
+  const getColorClasses = (color: Colors) => {
     const colors = {
       emerald: {
         accent: '-emerald-500',
@@ -141,10 +141,7 @@ const PricingSection = ({ openContactModal }: Props) => {
           <div className="lg:hidden pb-4">
             <div className="flex space-x-4 min-w-max px-1">
               {plans.map((plan, index) => {
-                const colorClasses = getColorClasses(
-                  plan.color as Colors,
-                  plan.popular
-                );
+                const colorClasses = getColorClasses(plan.color as Colors);
                 return (
                   <div
                     key={index}
@@ -217,6 +214,7 @@ const PricingSection = ({ openContactModal }: Props) => {
                               ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md'
                               : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:border-slate-400'
                           }`}
+                          onClick={() => openContactModal(plan.name)}
                         >
                           <span>Выбрать план</span>
                           <ArrowRight className="w-4 h-4 ml-2" />
@@ -232,10 +230,7 @@ const PricingSection = ({ openContactModal }: Props) => {
           {/* Desktop: Grid layout */}
           <div className="hidden lg:contents">
             {plans.map((plan, index) => {
-              const colorClasses = getColorClasses(
-                plan.color as Colors,
-                plan.popular
-              );
+              const colorClasses = getColorClasses(plan.color as Colors);
               return (
                 <div
                   key={index}
@@ -305,6 +300,7 @@ const PricingSection = ({ openContactModal }: Props) => {
                             ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md'
                             : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:border-slate-400'
                         }`}
+                        onClick={() => openContactModal(plan.name)}
                       >
                         <span>Выбрать план</span>
                         <ArrowRight className="w-4 h-4 ml-2" />
@@ -332,7 +328,7 @@ const PricingSection = ({ openContactModal }: Props) => {
                 </p>
                 <button
                   className="rounded-md sm:rounded-lg inline-flex items-center px-5 py-3 sm:px-8 sm:py-4 bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-all duration-200 group text-sm sm:text-base"
-                  onClick={openContactModal}
+                  onClick={() => openContactModal()}
                 >
                   Обсудить проект
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
