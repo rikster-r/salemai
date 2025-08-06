@@ -35,8 +35,8 @@ export default function Services() {
         <Telephone />
 
         {/* Additional Services Grid */}
-        <div className="mt-32">
-          <div className="text-center mb-16">
+        <div className="mt-16 md:mt-36">
+          <div className="text-center mb-8 md:mb-16">
             <h3 className="text-2xl md:text-4xl font-bold text-slate-800 mb-6">
               ... и многое другое
             </h3>
