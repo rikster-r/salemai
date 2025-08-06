@@ -12,7 +12,7 @@ export default function ServiceCard({
   return (
     <div className="rounded-xl relative h-full bg-white border border-slate-200  transition-all duration-300 p-4 sm:p-6 hover:border-slate-300">
       <div
-        className={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-xl mb-4 flex items-center justify-center transition-transform duration-300`}
+        className={`w-12 h-12 bg-slate-700 rounded-xl mb-4 flex items-center justify-center transition-transform duration-300`}
       >
         {icon}
       </div>
