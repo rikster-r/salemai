@@ -6,6 +6,8 @@ import Services from '@/components/sections/Services';
 import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
 import Head from 'next/head';
+import ContactModal from '@/components/ContactModal';
+import { useState } from 'react';
 
 const firsNeue = localFont({
   src: [
@@ -107,22 +109,30 @@ const firsNeue = localFont({
 });
 
 export default function Home() {
+  const [isContactModalOpen, setContactModalOpen] = useState(false);
+
+  const openContactModal = () => {
+    setContactModalOpen(true);
+  };
+
   return (
     <>
       <Head>
         <title>SalemAI</title>
       </Head>
-      <div
-        className={`font-sans flex justify-center min-h-screen ${firsNeue.className} relative`}
-      >
-        <Header />
+      <div className={`min-h-screen ${firsNeue.className} relative`}>
+        <Header openContactModal={openContactModal} />
         <main className="w-full">
-          <Hero />
+          <Hero openContactModal={openContactModal} />
           <Spheres />
           <Services />
-          <Pricing />
-          <Footer />
+          <Pricing openContactModal={openContactModal} />
         </main>
+        <Footer />
+        <ContactModal
+          isOpen={isContactModalOpen}
+          onClose={() => setContactModalOpen(false)}
+        />
       </div>
     </>
   );

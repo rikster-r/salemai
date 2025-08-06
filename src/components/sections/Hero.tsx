@@ -11,7 +11,11 @@ import {
 import Image from 'next/image';
 import HeroSmall from '../../assets/images/HeroSmall.png';
 
-export default function HRPlatformHero() {
+type Props = {
+  openContactModal: () => void;
+};
+
+export default function Hero({ openContactModal }: Props) {
   return (
     <section className="max-h-[800px] bg-gray-50 relative overflow-hidden pt-35 pb-16 md:pt-40">
       {/* Centered Container for Floating Elements */}
@@ -109,7 +113,10 @@ export default function HRPlatformHero() {
           Автоматизируйте процессы в продажах, маркетинге, HR и других сферах с
           помощью SalemAI.
         </p>
-        <button className="bg-primary-400 hover:bg-primary-500 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all">
+        <button
+          className="bg-primary-400 hover:bg-primary-500 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all"
+          onClick={openContactModal}
+        >
           Оставить заявку
         </button>
       </div>

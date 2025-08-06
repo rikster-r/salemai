@@ -3,7 +3,11 @@ import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import LogoFull from '../assets/images/LogoFull.svg';
 
-const Header = () => {
+type Props = {
+  openContactModal: () => void;
+};
+
+const Header = ({ openContactModal }: Props) => {
   return (
     <header className="bg-white shadow-sm py-3 px-5 sm:py-4 sm:px-6 w-[95%] sm:w-full sm:max-w-xl border border-gray-300 rounded-3xl fixed top-6 left-1/2 -translate-x-1/2 z-100 sm:mx-auto">
       <div className="sm:max-w-7xl flex items-center justify-between">
@@ -27,12 +31,12 @@ const Header = () => {
           >
             Цены
           </a>
-          <a
-            href="#"
+          <button
+            onClick={openContactModal}
             className="text-gray-600 hover:text-gray-900 font-semibold hover:cursor-pointer"
           >
             Связаться
-          </a>
+          </button>
         </nav>
 
         <button className="flex sm:hidden">

@@ -11,12 +11,15 @@
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
+    "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.2.7",
     "@icons-pack/react-simple-icons": "^13.7.0",
     "lucide-react": "^0.536.0",
     "motion": "^12.23.12",
     "next": "15.4.5",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
