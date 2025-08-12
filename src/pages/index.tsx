@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Pricing from '@/components/sections/Pricing';
 import Spheres from '@/components/sections/Spheres';
 import Services from '@/components/sections/Services';
+import WhyUs from '@/components/sections/WhyUs';
 import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
 import Head from 'next/head';
@@ -130,6 +131,7 @@ export default function Home() {
           <Hero openContactModal={openContactModal} />
           <Spheres />
           <Services />
+          <WhyUs />
           <Pricing openContactModal={openContactModal} />
         </main>
         <Footer />
