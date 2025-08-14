@@ -114,7 +114,7 @@ export default function Hero({ openContactModal }: Props) {
           помощью SalemAI.
         </p>
         <button
-          className="bg-primary-400 hover:bg-primary-500 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all"
+          className="bg-primary-500 hover:bg-primary-400 text-white font-semibold px-8 py-4 rounded-2xl duration-200 shadow-lg transition-all z-100"
           onClick={() => openContactModal()}
         >
           Оставить заявку

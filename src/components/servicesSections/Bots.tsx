@@ -116,7 +116,10 @@ export default function Bots() {
                   placeholder="Сообщение..."
                   className="flex-grow bg-transparent outline-none text-base px-2 max-w-[87%]"
                 />
-                <button className="text-blue-500 px-2">
+                <button
+                  className="text-blue-500 px-2"
+                  aria-label="Send message"
+                >
                   <SendHorizontal className="w-5 h-5" />
                 </button>
               </div>

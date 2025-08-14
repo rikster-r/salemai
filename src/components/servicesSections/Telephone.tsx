@@ -197,6 +197,7 @@ export default function Telephony() {
                       <motion.button
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsMuted(!isMuted)}
+                        aria-label={isMuted ? 'Unmute' : 'Mute'}
                         className={`w-14 h-14 ${
                           isMuted ? 'bg-red-500' : 'bg-gray-600'
                         } rounded-full flex items-center justify-center shadow-lg`}

@@ -52,6 +52,7 @@ const Header = ({ openContactModal }: Props) => {
           <button
             onClick={() => setSidebarOpen(true)}
             className="sm:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none hover:bg-gray-100"
+            aria-label="Open menu"
           >
             <Menu className="w-5 h-5" />
           </button>
