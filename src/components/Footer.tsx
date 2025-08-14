@@ -49,7 +49,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="text-gray-600 text-sm hover:text-gray-900 transition-colors"
                 >
                   Услуги
@@ -57,7 +57,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#pricing"
                   className="text-gray-600 text-sm hover:text-gray-900 transition-colors"
                 >
                   Цены

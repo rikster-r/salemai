@@ -18,14 +18,14 @@ import {
 } from 'lucide-react';
 export default function Services() {
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 to-white py-20 min-h-[1300px]">
+    <section
+      className="relative bg-gradient-to-b from-slate-50 to-white py-20 min-h-[1300px]"
+      id="services"
+    >
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-8 md:mb-16">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
-            id="services"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
             Что мы предлагаем?
           </h2>
         </div>

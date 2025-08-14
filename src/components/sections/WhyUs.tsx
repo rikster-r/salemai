@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, X } from 'lucide-react';
 
-const WhyUsSection = () => {
+type Props = {
+  openContactModal: (plan?: string) => void;
+};
+
+const WhyUsSection = ({ openContactModal }: Props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const comparisons = [
@@ -35,7 +39,7 @@ const WhyUsSection = () => {
     { value: '98%', label: 'клиентов продолжают сотрудничество' },
     { value: '14', label: 'дней до полного запуска' },
     { value: '24/7', label: 'поддержка без выходных' },
-    { value: '100%', label: 'автоматизация процессов' }
+    { value: '100%', label: 'автоматизация процессов' },
   ];
 
   return (
@@ -122,7 +126,10 @@ const WhyUsSection = () => {
           </div>
 
           <div className="text-center">
-            <button className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg font-semibold text-base transition-all duration-300">
+            <button
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg font-semibold text-base transition-all duration-300"
+              onClick={() => openContactModal()}
+            >
               Запустить проект
               <ArrowRight className="w-4 h-4 ml-2.5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>

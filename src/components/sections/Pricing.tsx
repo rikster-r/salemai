@@ -107,7 +107,10 @@ const PricingSection = ({ openContactModal }: Props) => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 to-slate-100 py-20">
+    <section
+      className="relative bg-gradient-to-b from-slate-50 to-slate-100 py-20"
+      id="pricing"
+    >
       {/* Sophisticated Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
 
@@ -121,10 +124,7 @@ const PricingSection = ({ openContactModal }: Props) => {
             </span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-slate-300"></div>
           </div>
-          <h2
-            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
-            id="pricing"
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
             Выберите подходящий
             <span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mt-2">
               уровень
