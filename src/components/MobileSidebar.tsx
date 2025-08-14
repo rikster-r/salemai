@@ -1,5 +1,10 @@
 import React from 'react';
-import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
+import {
+  Dialog,
+  DialogPanel,
+  Transition,
+  TransitionChild,
+} from '@headlessui/react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import LogoFull from '../assets/images/LogoFull.svg';
@@ -10,10 +15,14 @@ type MobileSidebarProps = {
   openContactModal: (plan?: string) => void;
 };
 
-const MobileSidebar = ({ isOpen, onClose, openContactModal }: MobileSidebarProps) => {
+const MobileSidebar = ({
+  isOpen,
+  onClose,
+  openContactModal,
+}: MobileSidebarProps) => {
   return (
     <Transition show={isOpen}>
-      <Dialog onClose={onClose} className="relative z-50">
+      <Dialog onClose={onClose} className="relative z-110">
         {/* Backdrop */}
         <TransitionChild
           enter="ease-in-out duration-300"
