@@ -71,7 +71,7 @@ export default function Bots() {
           />
 
           {/* 2. Chat overlay: fits exactly over display area */}
-          <div className="absolute inset-0 px-[calc(0.12*98%)] pb-[calc(0.12*98%)] pt-4 flex flex-col pointer-events-none">
+          <div className="absolute inset-0 px-[calc(0.1*98%)] pb-[calc(0.12*98%)] pt-2 md:pt-4 flex flex-col pointer-events-none">
             {/* Chat Messages Container: scrollable */}
             <motion.div
               className="overflow-y-auto space-y-3 flex-1"
@@ -84,14 +84,14 @@ export default function Bots() {
                 className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]"
                 variants={messageVariants}
               >
-                <p className="text-base">Здравствуйте! Чем могу помочь?</p>
+                <p className="text-sm sm:text-base">Здравствуйте! Чем могу помочь?</p>
               </motion.div>
               <motion.div
                 className="flex justify-end"
                 variants={messageVariants}
               >
                 <div className="bg-blue-500 p-3 rounded-2xl rounded-tr-sm max-w-[80%]">
-                  <p className="text-base text-white">
+                  <p className="text-sm sm:text-base text-white">
                     Хочу узнать о ваших услугах
                   </p>
                 </div>
@@ -100,7 +100,7 @@ export default function Bots() {
                 className="bg-gray-300 p-3 rounded-2xl rounded-tl-sm max-w-[80%]"
                 variants={messageVariants}
               >
-                <p className="text-base">
+                <p className="text-sm sm:text-base">
                   Конечно! Мы предлагаем широкий спектр услуг для автоматизации
                   всех бизнес-процессов
                 </p>
