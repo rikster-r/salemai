@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
 import Head from 'next/head';
 import ContactModal from '@/components/ContactModal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const firsNeue = localFont({
   src: [
@@ -146,7 +146,7 @@ export default function Home() {
           <Hero openContactModal={openContactModal} />
           <Spheres />
           <Services />
-          <WhyUs />
+          <WhyUs openContactModal={openContactModal} />
           <Pricing openContactModal={openContactModal} />
         </main>
         <Footer />

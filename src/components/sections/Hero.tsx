@@ -17,7 +17,10 @@ type Props = {
 
 export default function Hero({ openContactModal }: Props) {
   return (
-    <section className="max-h-[800px] bg-gray-50 relative overflow-hidden pt-35 pb-16 md:pt-40">
+    <section
+      className="max-h-[800px] bg-gray-50 relative overflow-hidden pt-35 pb-16 md:pt-40"
+      id="hero"
+    >
       {/* Centered Container for Floating Elements */}
       <div className="absolute inset-x-0 items-center justify-center z-50 hidden lg:flex ">
         <div className="relative w-full max-w-4xl h-96">

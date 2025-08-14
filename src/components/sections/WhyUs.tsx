@@ -43,7 +43,7 @@ const WhyUsSection = ({ openContactModal }: Props) => {
   ];
 
   return (
-    <section className="bg-slate-950 py-20 overflow-hidden">
+    <section className="bg-slate-950 py-20 overflow-hidden" id="why-us">
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header */}
         <div className="text-center mb-14">
