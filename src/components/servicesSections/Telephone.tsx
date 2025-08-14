@@ -179,6 +179,7 @@ export default function Telephony() {
                     <>
                       <motion.button
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Отменить звонок"
                         className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center shadow-lg"
                       >
                         <PhoneOff className="w-8 h-8 text-white" />
@@ -197,7 +198,7 @@ export default function Telephony() {
                       <motion.button
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsMuted(!isMuted)}
-                        aria-label={isMuted ? 'Unmute' : 'Mute'}
+                        aria-label={isMuted ? 'Разблокировать звук' : 'Заблокировать звук'}
                         className={`w-14 h-14 ${
                           isMuted ? 'bg-red-500' : 'bg-gray-600'
                         } rounded-full flex items-center justify-center shadow-lg`}
@@ -210,12 +211,14 @@ export default function Telephony() {
                       </motion.button>
                       <motion.button
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Отменить звонок"
                         className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center shadow-lg"
                       >
                         <PhoneOff className="w-8 h-8 text-white" />
                       </motion.button>
                       <motion.button
                         whileTap={{ scale: 0.95 }}
+                        aria-label="Уменьшить громкость"
                         className="w-14 h-14 bg-gray-600 rounded-full flex items-center justify-center shadow-lg"
                       >
                         <Volume2 className="w-6 h-6 text-white" />

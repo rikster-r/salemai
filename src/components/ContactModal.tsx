@@ -168,7 +168,7 @@ const ContactModal = ({
                 <button
                   onClick={onClose}
                   className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors z-10"
-                  aria-label="Close modal"
+                  aria-label="Закрыть модальное окно"
                 >
                   <X className="w-5 h-5" />
                 </button>

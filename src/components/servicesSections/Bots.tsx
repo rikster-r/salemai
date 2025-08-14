@@ -118,7 +118,7 @@ export default function Bots() {
                 />
                 <button
                   className="text-blue-500 px-2"
-                  aria-label="Send message"
+                  aria-label="Отправить сообщение"
                 >
                   <SendHorizontal className="w-5 h-5" />
                 </button>
