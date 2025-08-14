@@ -124,6 +124,21 @@ export default function Home() {
     <>
       <Head>
         <title>SalemAI</title>
+        <title>SalemAI</title>
+        <meta
+          name="description"
+          content="SalemAI — умные AI-инструменты для автоматизации и роста вашего бизнеса."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="SalemAI, искусственный интеллект, автоматизация, бизнес, машинное обучение, ИИ, CRM, чатбот"
+        />
+        <meta name="author" content="Команда SalemAI" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Language hint */}
+        <meta httpEquiv="Content-Language" content="ru" />
       </Head>
       <div className={`min-h-screen ${firsNeue.className} relative`}>
         <Header openContactModal={openContactModal} />
