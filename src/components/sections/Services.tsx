@@ -41,7 +41,7 @@ export default function Services() {
               ... и многое другое
             </h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-6">
             <ServiceCard
               icon={<Zap className="w-6 h-6 text-white" />}
               title="Автоматизация задач"

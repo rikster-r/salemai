@@ -19,7 +19,7 @@ export default function ServiceCard({
       <h4 className="overflow-hidden text-ellipsis font-semibold text-slate-800 mb-2 text-sm md:text-base">
         {title}
       </h4>
-      <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+      <p className="text-sm text-slate-600 leading-relaxed">
         {description}
       </p>
     </div>
