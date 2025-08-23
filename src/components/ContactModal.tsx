@@ -193,7 +193,7 @@ const ContactModal = ({
                             <h4 className="font-semibold text-slate-900">
                               Телефон
                             </h4>
-                            <p className="text-slate-600">+7 (777) 123-45-67</p>
+                            <p className="text-slate-600">+7 777 634 2219</p>
                           </div>
                         </div>
                         <div className="flex items-start space-x-4">
